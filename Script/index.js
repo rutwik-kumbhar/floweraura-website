@@ -1,3 +1,10 @@
+
+//------------------Store User Details----------------
+
+let userDetails = JSON.parse(localStorage.getItem("user-details")) || new Array();
+
+
+
 //------------------Image Slider Start---------------- 
 
 let imageSlider = document.querySelector("#slider");
@@ -103,7 +110,7 @@ anniversaryHover.addEventListener("mouseover", () => {
 let cakesHover = document.querySelector("#cakes");
 let dropCakes = document.querySelector("#drop-down-cake");
 
-cakesHover.addEventListener("mouseover",()=>{
+cakesHover.addEventListener("mouseover", () => {
     dropCakes.style.display = "flex";
     dropFlower.style.display = "none"
     dropPlant.style.display = "none"
@@ -111,7 +118,7 @@ cakesHover.addEventListener("mouseover",()=>{
     dropBirthday.style.display = "none";
     dropAnniversary.style.display = "none"
     dropPersonalised.style.display = "none"
-    
+
 })
 
 //------------------ Drop Down list Personalised ---------------- 
@@ -119,7 +126,7 @@ cakesHover.addEventListener("mouseover",()=>{
 let personalisedHover = document.querySelector("#personalised");
 let dropPersonalised = document.querySelector("#drop-down-personalised");
 
-personalisedHover.addEventListener("mouseover",()=>{
+personalisedHover.addEventListener("mouseover", () => {
     dropPersonalised.style.display = "flex";
     dropFlower.style.display = "none"
     dropPlant.style.display = "none"
@@ -142,7 +149,149 @@ imageSlider.addEventListener("mouseover", () => {
     dropPersonalised.style.display = "none"
 })
 
+document.querySelector("#nav-bar").addEventListener("mouseover", () => {
+    dropFlower.style.display = "none"
+    dropPlant.style.display = "none"
+    dropGift.style.display = "none"
+    dropBirthday.style.display = "none"
+    dropAnniversary.style.display = "none"
+    dropCakes.style.display = "none";
+    dropPersonalised.style.display = "none"
+})
 
+document.addEventListener("scroll", () => {
+    dropFlower.style.display = "none"
+    dropPlant.style.display = "none"
+    dropGift.style.display = "none"
+    dropBirthday.style.display = "none"
+    dropAnniversary.style.display = "none"
+    dropCakes.style.display = "none";
+    dropPersonalised.style.display = "none"
+})
+// -------------------------- Sign Form ------------------------------------
+
+let sign_inClick = document.querySelector("#sign-in-icon")
+
+sign_inClick.addEventListener("click", () => {
+    document.querySelector('.overlay').classList.add('show-overlay');
+    document.querySelector("#pop-up-sign-in").style.display = "flex"
+})
+
+
+document.querySelector("#log-in").addEventListener("click", () => {
+    document.querySelector("#sign-in-div").style.display = "none"
+    document.querySelector("#sign-up-div").style.display = "block"
+})
+
+document.querySelector("#sign-up").addEventListener("click", () => {
+    document.querySelector("#sign-up-div").style.display = "none"
+    document.querySelector("#sign-in-div").style.display = "block"
+})
+
+document.querySelector(".close").addEventListener("click", () => {
+    document.querySelector('.overlay').classList.remove('show-overlay');
+    document.querySelector("#pop-up-sign-in").style.display = "none"
+})
+
+document.querySelector(".closed").addEventListener("click", () => {
+    document.querySelector('.overlay').classList.remove('show-overlay');
+    document.querySelector("#pop-up-sign-in").style.display = "none"
+})
+
+document.addEventListener("scroll", () => {
+    document.querySelector('.overlay').classList.remove('show-overlay');
+    document.querySelector("#pop-up-sign-in").style.display = "none"
+})
+
+// ------ Get Deatis from the user for account create -------------
+
+document.querySelector("#mobile").oninput = function () {
+    if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+    }
+}
+
+function getUserDeatils() { // get user details function Created 
+    let signUp_form = document.querySelector("#sign-up-form");
+    signUp_form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let user_details_form = {
+            name: signUp_form.name.value,
+            email: signUp_form.email.value,
+            mobile: signUp_form.mobile.value,
+            password: signUp_form.password.value
+        }
+
+        let email = false;
+        let mobile = false
+
+        for (let i = 0; i < userDetails.length; i++) {
+            if (userDetails[i].email == user_details_form.email) {
+                email = true
+                break;
+            }
+        }
+        for (let i = 0; i < userDetails.length; i++) {
+            if (userDetails[i].mobile == user_details_form.mobile) {
+                mobile = true
+                break;
+            }
+        }
+        if (email) {
+            alert("Email is Already Exist");
+        } else if (mobile) {
+            alert("Mobile Number is Already Exist");
+        } else {
+            userDetails.push(user_details_form);
+            localStorage.setItem("user-details", JSON.stringify(userDetails));
+            alert("Account Created Successfully..!")
+            document.querySelector("#sign-up-div").style.display = "none"
+            document.querySelector("#sign-in-div").style.display = "block" 
+        }
+    })
+}
+getUserDeatils(); // function call
+
+function checkUser(){
+    let signIn_form = document.querySelector("#sign-in-form");
+    let name = document.querySelector("#name");
+
+    signIn_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        let email = false;
+        let password = false;
+
+        for(let i=0;i<userDetails.length;i++){
+            if(signIn_form.email.value == userDetails[i].email){
+                email = true
+                break;
+            }
+        }
+
+        for(let i=0;i<userDetails.length;i++){
+            if(signIn_form.password.value == userDetails[i].password){
+                password = true;
+                break;
+            }
+        }
+
+        if(email && password){
+           
+            window.location.href = "/HTML/index.html"
+        }else if(email == false && password == false){
+            alert(" You Enter Wrong Credential")
+        }else if(email == false){
+            alert("You Enter Wrong Email..! Please Enter Right Email")
+        }else if(password == false){
+            alert("You Enter Wrong Password..! Please Enter Right Password")
+        }
+
+    })
+
+}
+
+checkUser();
 
 
 

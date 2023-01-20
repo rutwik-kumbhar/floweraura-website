@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>www.floweraura.com</title>
     <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/form.css">
+    <link rel="stylesheet" href="/CSS/sign-up.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,11 +16,74 @@
 
 <body>
 
+
+    <!----------------------- Sign Form  ------------------------>
+
+    <div class="overlay"></div>
+
+    <div id="pop-up-sign-in">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTulxSJ_2tfbdSZsY86aa3tlsIDK2B8P2hvcg&usqp=CAU"
+                alt="">
+        </div>
+        <div id="sign-in-div">
+            <i class="fa-solid fa-x closed"></i>
+            <h1>WELCOME</h1>
+            <form id="sign-in-form">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" maxlength="8" id="password" placeholder="password" required>
+                <button>LOG IN</button>
+                <p><a href="">Forgot Password?</a></p>
+                <p>Don't have an account?<span id="log-in">Log in</span></p> 
+                <p>Or, Login with</p>
+                <div>
+                    <div>
+                        <i class="fa-brands fa-facebook"></i> <span>Facebook</span>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-google-plus"></i>
+                        <span>Google</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div id="sign-up-div">
+            <i class="fa-solid fa-x close"></i>
+            <h1>WELCOME</h1>
+            <form id="sign-up-form">
+                <input type="text" id="name" placeholder="Enter Name">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="number" id="mobile" maxlength="10" placeholder="Mobile Number" required>
+                <input type="password"  maxlength="8" id="password" placeholder="password" required>
+                <button>Sign Up</button>
+                <p>Already registered?<span id="sign-up">Sign Up</span></p>
+                <p>Or, Login with</p>
+                <div>
+                    <div>
+                        <i class="fa-brands fa-facebook"></i> <span>Facebook</span>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-google-plus"></i>
+                        <span>Google</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        
+
+
+    </div>
+
+
     <!----------------------- Navbar Start ------------------------>
 
     <div id="nav-bar">
         <nav>
-            <img src="/Images/logo_web.svg" alt="">
+           <a href="/HTML/index.html"><img src="/Images/logo_web.svg" alt=""></a> 
             <div>
                 <div>
                     <span><i class="fa-solid fa-location-dot"></i></span>
@@ -40,9 +105,9 @@
                 <i class="fa-solid fa-cart-plus"></i>
                 <p>Cart</p>
             </div>
-            <div>
+            <div id="sign-in-icon">
                 <i class="fa-solid fa-user-large"></i>
-                <p>Sign In</p>
+                <p id="name">Sign In</p>
             </div>
             <div>
                 <i class="fa-solid fa-gift"></i>
@@ -507,6 +572,196 @@
         <div>
             <img src="/Images/cake_6.avif" alt="">
             <h3>Cartoon Cakes</h3>
+        </div>
+    </div>
+
+    <!---------------- Send Flowers Online ------------------>
+
+    <div class="blank"></div>
+
+    <h1 id="heading">Send Flowers Online</h1>
+    <div class="product-flower">
+        <div>
+            <img src="/Images/flower_1.avif" alt="">
+            <h3>Birthday</h3>
+        </div>
+        <div>
+            <img src="/Images/flower_2.avif" alt="">
+            <h3>Anniversary</h3>
+        </div>
+        <div>
+            <img src="/Images/flower_3.avif" alt="">
+            <h3>Exotic Flowers</h3>
+        </div>
+        <div>
+            <img src="/Images/flower_4avif.avif" alt="">
+            <h3>Flower Box</h3>
+        </div>
+    </div>
+
+    <!---------------- Send Combos ------------------>
+
+    <div class="blank"></div>
+
+    <h1 id="heading">Combos</h1>
+    <div class="product-combos">
+        <div>
+            <img src="/Images/combos_1.avif" alt="">
+            <h3>Flower & Cakes</h3>
+        </div>
+        <div>
+            <img src="/Images/combos_2.avif" alt="">
+            <h3>Flower & Plants</h3>
+        </div>
+        <div>
+            <img src="/Images/combos_3.avif" alt="">
+            <h3>Cake & Cakes</h3>
+        </div>
+        <div>
+            <img src="/Images/combos_4.avif" alt="">
+            <h3>Flower & Soft-Toys</h3>
+        </div>
+
+    </div>
+
+    <!---------------- Send Plants ------------------>
+
+    <div class="blank"></div>
+
+    <h1 id="heading">Plant</h1>
+    <div class="product-box">
+        <div>
+            <img src="/Images/plants_1.avif" alt="">
+            <h3>Medicinal Plants</h3>
+        </div>
+        <div>
+            <img src="/Images/plants_2.avif" alt="">
+            <h3>Lucky Bamboo</h3>
+        </div>
+        <div>
+            <img src="/Images/plants_3.avif" alt="">
+            <h3>Air Purifying Plants</h3>
+        </div>
+        <div>
+            <img src="/Images/plant_4avif.avif" alt="">
+            <h3>Succulent Plants</h3>
+        </div>
+        <div>
+            <img src="/Images/plant_5.avif" alt="">
+            <h3>Flowering Plants</h3>
+        </div>
+        <div>
+            <img src="/Images/plants_6.avif" alt="">
+            <h3>Bonsai Plants</h3>
+        </div>
+    </div>
+
+    <!---------------- Gift Ideas ------------------>
+
+    <div class="blank"></div>
+
+    <h1 id="heading">Gift Ideas</h1>
+    <div class="product-flower">
+        <div>
+            <img src="/Images/gift_1.avif" alt="">
+            <h3>Soft Toys</h3>
+        </div>
+        <div>
+            <img src="/Images/gift_2.avif" alt="">
+            <h3>Mugs</h3>
+        </div>
+        <div>
+            <img src="/Images/gift_3.avif" alt="">
+            <h3>Cushion</h3>
+        </div>
+        <div>
+            <img src="/Images/gift_4.avif" alt="">
+            <h3>Chocolate</h3>
+        </div>
+
+
+    </div>
+    <div class="product-flower">
+        <div>
+            <img src="/Images/gift_5.avif" alt="">
+            <h3>God Idols</h3>
+        </div>
+        <div>
+            <img src="/Images/gift.avif" alt="">
+            <h3>Personalised Gifts</h3>
+        </div>
+        <div>
+            <img src="/Images/gift_7.avif" alt="">
+            <h3>Jewellery</h3>
+        </div>
+        <div>
+            <img src="/Images/gifts_8.avif" alt="">
+            <h3>All Gifts</h3>
+        </div>
+
+    </div>
+
+
+    <!---------------- Description ------------------>
+    <div class="blank"></div>
+    <div class="desc-website">
+        <h1>Best Florist for Online Flower Delivery In India</h1>
+        <p>Is there anyone in this world who does not like flowers? Anyone who does not admire the beauty of flowers? Of
+            course not! Because flowers undoubtedly bring a smile to everyone's face, they add the warmth of sunshine to
+            the day and make the soul feel calm and peaceful. And so to speak the language of flowers and express
+            emotions when words are just not enough, FlowerAura has taken the responsibility to become your messenger of
+            Emotions, Send flower bouquets online and add more smiles to your loved ones' faces.</p>
+    </div>
+
+    <!---------------- footer ------------------>
+
+    <div id="footer">
+        <div>
+            <div>
+                <h3>Spread The Love</h3>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div>
+                <div>
+                    <p>About Us</p>
+                    <p>Sell With Us</p>
+                    <p>Coupons & Deals</p>
+                    <p>Cancellation & Refund</p>
+                    <p>Terms and Conditions</p>
+                    <p>Career</p>
+                </div>
+                <div>
+                    <p>Media</p>
+                    <p>Privacy Policy</p>
+                    <p>Reviews</p>
+                    <p>Blog</p>
+                    <p>Sitemap</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://imgcdn.floweraura.com/ssr-build/static/media/app.0ddd7110.svg" alt="">
+                    <p>Download our mobile app on</p>
+
+
+                </div>
+                <div>
+                    <img src="https://imgcdn.floweraura.com/ssr-build/static/media/googleplay.79a22a1d.png" alt="">
+                    <img src="https://imgcdn.floweraura.com/ssr-build/static/media/appstore.93f95fc4.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="/Images/logo_web.svg" alt="">
+            <p>Copyright 2023 Rutwik Kumbhar</p>
+            <div>
+                <p>We Accept :</p>
+                <img src="https://imgcdn.floweraura.com/alloccasion/footer/desktop-payment-option.png" alt="">
+            </div>
+
         </div>
     </div>
 
