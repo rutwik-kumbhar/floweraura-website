@@ -1,8 +1,25 @@
 
 *{
     margin: 0;
-    padding: 0;
+    padding: 0
 }
+
+/*----------- Screen Overlay ------------*/
+.overlay{
+   width: 100%;
+   height: 100vh;
+   background-color:  rgb(0, 0, 0, 0.5);;
+   position: fixed;
+   top: 0;
+   opacity: 0;
+   z-index: -1;
+   transition: 1s;
+}
+.show-overlay{
+   opacity: 1;
+   z-index: 1;
+}
+
 
 /*----------- Navbar CSS Start ------------*/
 
@@ -73,8 +90,12 @@ nav>div div>span i{
     font-weight: bold;
 }
 
-/*----------- Sub Navbar CSS Start ------------*/
+#nav-bar>nav:nth-child(2)>div:hover{
+   cursor: pointer;
+   color: #ed184a;
+}
 
+/*----------- Sub Navbar CSS Start ------------*/
 
  #sub-nav-bar{
     display: flex;
@@ -252,7 +273,7 @@ nav>div div>span i{
  }
 
 
- /* Product Box After the Image Slider CSS */
+ /*-------------- Product Box After the Image Slider CSS ------------- */
 
  .blank{
     height: 40px;
@@ -306,15 +327,13 @@ nav>div div>span i{
     margin-top: 10px;
  }
 
-
-  /* Popular Categories Box */
+/*-------------- Popular Categories Box ------------- */
 
 .popular-categories{
     width: 100%;
     background: linear-gradient(#fc7850, #ff5b6d);
       
 }
-
 
 .popular-categories>div:nth-child(1){
     margin-left: 40px;
@@ -339,3 +358,164 @@ nav>div div>span i{
     border-radius: 10px;
 }
 
+/*--------------------- Send Flowers Online ------------------------*/
+
+ .product-flower{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 30px;
+ }
+ 
+ .product-flower>div img{
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s;
+ }
+
+ .product-flower>div img:hover{
+    width: 220px;
+    height: 220px;
+ }
+ .product-flower>div h3{
+    text-align: center;
+    margin-top: 20px;
+ }
+
+
+/*--------------------- Send Combos ------------------------*/
+
+
+.product-combos{
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   background-color: white;
+   box-sizing: border-box;
+   padding: 30px;
+   padding-bottom: 50px;
+   
+}
+.product-combos>div{
+   width: 250px;;
+   height: 250px;
+   border-radius: 50%;
+   border: 2px solid red;
+   
+}
+
+.product-combos>div img{
+   display: flex;
+   margin: auto;
+   width: 250px;
+   height: 250px;
+   border-radius: 50%;
+}
+
+.product-combos>div img:hover{
+   width: 240px;
+   height: 240px;
+}
+
+.product-combos>div:hover{
+   border: 1.5px solid rgb(111, 110, 110);
+   width: 240px;;
+   height: 240px;
+   padding: 3px;
+}
+.product-combos>div h3{
+   text-align: center;
+   margin-top: 10px;
+}
+
+/*---------------------Description------------------------*/
+
+.desc-website{
+   padding: 30px 60px;
+}
+.desc-website> h1{
+   margin-bottom: 20px;
+}
+.desc-website> p{
+   line-height: 25px;
+    text-indent: 60px;
+    text-align: justify;
+}
+
+/*--------------------- footer ------------------------*/
+
+#footer{
+   background-color: #f7f7f7;
+   padding-top: 20px;
+   border-top: 1px solid grey;
+}
+
+#footer>div:nth-child(1){
+   display: flex;
+   justify-content: space-around;
+   border-bottom: 1px solid grey;
+   padding-bottom: 10px;
+}
+
+#footer>div:nth-child(1)>div:nth-child(1){
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 20px; 
+}
+
+#footer>div:nth-child(1)>div:nth-child(1) i{
+   font-size: 30px;
+   margin-top: 15px;
+   color: #ed184a;
+   margin-right: 8px;
+}
+#footer>div:nth-child(1)>div:nth-child(1) i:hover{
+    color: #739518;
+}
+
+
+
+#footer>div:nth-child(1)>div+div{
+   display: flex;
+   width: 30%;
+   justify-content: space-between;
+   line-height: 25px;
+}
+
+#footer>div:nth-child(1)>div:nth-child(3){
+   display: block;
+}
+
+#footer>div:nth-child(1)>div:nth-child(3)>div:nth-child(1){
+   display: flex;
+   align-items: center ;
+   gap: 20px;
+   font-size: 22px;
+   margin-left: 22px;
+}
+
+#footer>div:nth-child(1)>div:nth-child(3)>div:nth-child(2){
+display: flex;
+justify-content: space-evenly;
+margin-top: 20px;
+}
+#footer>div:nth-child(1)>div:nth-child(3)>div:nth-child(2) img{
+   width: 35%;
+}
+
+#footer>div:nth-child(2){
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+#footer>div:nth-child(2)>div{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   padding: 20px 0px;
+}

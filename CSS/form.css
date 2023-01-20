@@ -1,0 +1,138 @@
+/*----------- Sign Form ------------*/
+
+.close{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: white;
+}
+.close:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.closed{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: white;
+}
+.closed:hover{
+    cursor: pointer;
+    color: red;
+}
+
+
+
+#pop-up-sign-in{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    height: 500px;
+    position: absolute;
+    left: 20%;
+ }
+ #pop-up-sign-in>div:nth-child(1){
+    width: 40%;
+ }
+ #pop-up-sign-in>div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+ }
+ #pop-up-sign-in>div:nth-child(2) {
+    width: 60%;
+    background-color: #c94f96;
+ }
+ #pop-up-sign-in>div:nth-child(2) h1{
+    /* margin: 20px 0px 30px 40px; */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: white;
+ }
+
+ #pop-up-sign-in>div:nth-child(3) {
+    width: 60%;
+    background-color: #c94f96;
+ }
+ #pop-up-sign-in>div:nth-child(3) h1{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+ }
+ #sign-in-form{
+    width: 80%;
+    margin: auto;
+    display: block;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-color: white;
+    border-radius: 10px;
+ }
+ #sign-in-form>input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+ }
+ 
+ input[type="number"]::-webkit-inner-spin-button,
+ input[type="number"]::-webkit-outer-spin-button{
+    appearance: none;
+ }
+
+ #sign-in-form>button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid gray;
+ }
+ #forgot{
+ text-align: right;
+ margin: 10px 0px;
+ color: red;
+ }
+ #sign-in-form> p{
+    text-align: center;
+    margin: 10px 0px;
+    margin-bottom: 10px;
+ }
+ #sign-in-form>div{
+    display: flex;
+    justify-content: space-evenly;
+ }
+ #sign-in-form>div>div{
+    padding: 6px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 6px;
+    font-size: 20px;
+ }
+ #sign-in-form>div>div:nth-child(1) i{
+    color: blue;
+    font-size: 20px;
+ 
+ }
+ #sign-in-form>div>div:nth-child(2) i{
+    color: orangered;
+    font-size: 20px;
+ }
+
+ #sign-up-div{
+    display: none;
+    
+ }
+
+ #sign-up:hover, #log-in:hover{
+    cursor: pointer;
+    color: blue;
+ }
+ #pop-up-sign-in{
+    display: none;
+    z-index: 1;
+ }
