@@ -3,6 +3,8 @@
 
 let userDetails = JSON.parse(localStorage.getItem("user-details")) || new Array();
 
+let form_pop_up = false;
+
 
 
 //------------------Image Slider Start---------------- 
@@ -172,10 +174,22 @@ document.addEventListener("scroll", () => {
 
 let sign_inClick = document.querySelector("#sign-in-icon")
 
+let userLogout = document.querySelector("#user-logout");
+
 sign_inClick.addEventListener("click", () => {
-    document.querySelector('.overlay').classList.add('show-overlay');
-    document.querySelector("#pop-up-sign-in").style.display = "flex"
+    if(form_pop_up){
+        userLogout.style.display = "block"
+        document.querySelector("#logout-close").addEventListener("click",()=>{
+            userLogout.style.display = "none"
+        
+        })
+    }else{
+        document.querySelector('.overlay').classList.add('show-overlay');
+        document.querySelector("#pop-up-sign-in").style.display = "flex"
+    }
 })
+
+
 
 
 document.querySelector("#log-in").addEventListener("click", () => {
@@ -246,44 +260,79 @@ function getUserDeatils() { // get user details function Created
             localStorage.setItem("user-details", JSON.stringify(userDetails));
             alert("Account Created Successfully..!")
             document.querySelector("#sign-up-div").style.display = "none"
-            document.querySelector("#sign-in-div").style.display = "block" 
+            document.querySelector("#sign-in-div").style.display = "block"
         }
     })
 }
 getUserDeatils(); // function call
 
-function checkUser(){
+function checkUser() {
     let signIn_form = document.querySelector("#sign-in-form");
-    let name = document.querySelector("#name");
+    let name = document.getElementById("user-name")
 
     signIn_form.addEventListener("submit", (e) => {
         e.preventDefault();
-        
+
         let email = false;
         let password = false;
+        let userEmail = ""
 
-        for(let i=0;i<userDetails.length;i++){
-            if(signIn_form.email.value == userDetails[i].email){
+        for (let i = 0; i < userDetails.length; i++) {
+            if (signIn_form.email.value == userDetails[i].email) {
                 email = true
+                userEmail = userDetails[i].email
                 break;
             }
         }
 
-        for(let i=0;i<userDetails.length;i++){
-            if(signIn_form.password.value == userDetails[i].password){
+        for (let i = 0; i < userDetails.length; i++) {
+            if (signIn_form.password.value == userDetails[i].password) {
                 password = true;
                 break;
             }
         }
 
-        if(email && password){
-           
-            window.location.href = "/HTML/index.html"
-        }else if(email == false && password == false){
+        if (email && password) {
+            for (let i = 0; i < userDetails.length; i++) {
+                if (userEmail == userDetails[i].email) {
+                    name.textContent = userDetails[i].name
+                    document.querySelector("#pop-up-sign-in").style.display = "none"
+                    document.querySelector('.overlay').classList.remove('show-overlay');
+                    form_pop_up = true;
+
+                    let userLogout = document.querySelector("#user-logout");
+
+                    let showName = document.createElement("h3");
+                    showName.textContent = `Name : ${userDetails[i].name}`;
+
+                    let showEmail = document.createElement("p");
+                    showEmail.textContent = `Email : ${userDetails[i].email}`;
+
+                    let showMobile = document.querySelector("p");
+                    showMobile.textContent = `Mobile No. : ${userDetails[i].mobile}`
+
+                    let logout = document.createElement("button");
+                    logout.textContent = "Logout";
+
+                    logout.addEventListener("click",()=>{
+                        window.location.href = "/HTML/index.html"; 
+                    })
+                    user = {
+                        name : userDetails[i].name,
+                        email : userDetails[i].email,
+                        mobile : userDetails[i].password,
+                        logout : "Logout"
+                    }
+
+                    userLogout.append(showName,showEmail,showMobile,logout);
+                }
+            }
+
+        } else if (email == false && password == false) {   
             alert(" You Enter Wrong Credential")
-        }else if(email == false){
+        } else if (email == false) {
             alert("You Enter Wrong Email..! Please Enter Right Email")
-        }else if(password == false){
+        } else if (password == false) {
             alert("You Enter Wrong Password..! Please Enter Right Password")
         }
 
@@ -292,6 +341,7 @@ function checkUser(){
 }
 
 checkUser();
+
 
 
 

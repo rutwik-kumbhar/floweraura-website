@@ -136,3 +136,49 @@
     display: none;
     z-index: 1;
  }
+
+ /* -------------------- User Logout -------------------------------- */
+
+ #user-logout{
+    width: 300px;
+    background-color: white;
+    padding: 20px 30px;
+    position: absolute;
+    right: 5%;
+    top: 12%;
+    display: none;
+    box-sizing: border-box;
+    line-height: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ }
+ #user-logout i:nth-child(1){
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #c94f96;
+ } 
+ #user-logout button{
+    display: block;
+    text-align: center;
+    width: 120px;
+    padding: 7px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #c94f96;
+    color: white;
+    font-size: 17px;
+ }
+ #user-logout button:hover{
+    background-color: red;
+    cursor: pointer;
+ }
+ #user-logout i:nth-child(2){
+    position:absolute;
+    top: 4%;
+    right: 4%;
+ }
+ #user-logout i:nth-child(2):hover{
+    color: red;;
+    cursor: pointer;
+ }
