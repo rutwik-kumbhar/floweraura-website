@@ -257,3 +257,38 @@ nav>div div>span i{
 
 
 
+/*----------- Display Flower Product from Javascript ------------*/
+
+/* .blank{
+   height: 40px;
+   margin-top: 0px;
+   background-color: #edf1f7;
+} */
+
+.flower-product{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   width: 90%;
+   margin: auto;
+   row-gap: 60px;
+   margin-top: 30px;
+   /* border: 2px solid red; */
+   
+}
+.flower-product>div{
+   width: 80%;
+   height: 350px;
+   margin: auto;
+   text-align: center;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   padding: 20px 10px;
+   line-height: 40px;
+   transition: 1ms;
+}
+
+.flower-product img{
+   width: 60%;
+}
+.flower-product img:hover{
+   width: 65% ;
+}
