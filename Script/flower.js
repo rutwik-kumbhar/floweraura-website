@@ -282,9 +282,11 @@ function display(data){
         btn.textContent = "See Details"
 
         btn.addEventListener("click",()=>{
-         let product = JSON.parse(localStorage.getItem("product")) || [];
-            product.push(elment)
+            let product = JSON.parse(localStorage.getItem("product")) || [];
+            product.shift()
+            product.push({...elment,quantiy:1})
             localStorage.setItem("product",JSON.stringify(product));
+            window.location.href = "/HTML/product.html"
         })
     
         card.append(image,title,price,btn)

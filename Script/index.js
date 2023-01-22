@@ -295,8 +295,9 @@ function checkUser() {
         if (email && password) {
             for (let i = 0; i < userDetails.length; i++) {
                 if (userEmail == userDetails[i].email) {
-                    
+                
                     name.textContent = userDetails[i].name;
+
                     document.querySelector("#pop-up-sign-in").style.display = "none"
                     document.querySelector('.overlay').classList.remove('show-overlay');
                     form_pop_up = true;
@@ -318,13 +319,6 @@ function checkUser() {
                     logout.addEventListener("click",()=>{
                         window.location.href = "/HTML/index.html"; 
                     })
-                    user = {
-                        name : userDetails[i].name,
-                        email : userDetails[i].email,
-                        mobile : userDetails[i].password,
-                        logout : "Logout"
-                    }
-
                     userLogout.append(showName,showEmail,showMobile,logout);
                 }
             }
