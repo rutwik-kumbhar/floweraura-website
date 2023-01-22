@@ -1,0 +1,1 @@
+let productImage = document.querySelector("");

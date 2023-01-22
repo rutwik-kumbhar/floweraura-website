@@ -295,7 +295,8 @@ function checkUser() {
         if (email && password) {
             for (let i = 0; i < userDetails.length; i++) {
                 if (userEmail == userDetails[i].email) {
-                    name.textContent = userDetails[i].name
+                    
+                    name.textContent = userDetails[i].name;
                     document.querySelector("#pop-up-sign-in").style.display = "none"
                     document.querySelector('.overlay').classList.remove('show-overlay');
                     form_pop_up = true;
